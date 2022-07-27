@@ -61,14 +61,18 @@ public class Operations {
     public static boolean validPassword(){
         System.out.print("Enter the Password: ");
         String password = sc.next();
-        String regex = "^[A-Z][A-Za-z\\d@._-]{7,}$";
+        String regex = "^(?=.*[A-z])(?=.*\\d)([a-zA-Z\\d@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         boolean result = matcher.matches();
         if (result)
             System.out.println("Your password is valid");
         else
-            System.out.println("Your Password is invalid\nShould have minimum 8 characters\nAt least 1 Upper case");
+            System.out.println("""
+                    Your Password is invalid
+                    Should have minimum 8 characters
+                    At least 1 Upper case
+                    at least 1 number""");
         return result;
     }
 }
