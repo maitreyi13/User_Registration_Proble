@@ -33,4 +33,18 @@ public class Operations {
             System.out.println("Your Last name is invalid");
         return result;
     }
+    public static boolean validEmailAddress(){
+        System.out.print("Enter the Email Address:  ");
+        String emailId = sc.next();
+
+        String regex = "^[a-z]{3}[a-zA-z.]*@+bl.co+[a-z.]*$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(emailId);
+        boolean result = m.matches();
+        if (result)
+            System.out.println("Your Email Address is valid");
+        else
+            System.out.println("Your Email Address is invalid");
+        return result;
+    }
 }

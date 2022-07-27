@@ -8,11 +8,12 @@ public class UserRegistration {
         int choose;
         int select;
         do {
-            System.out.print("Press \n1.First Name Validation \n2.Last Name Validation : ");
+            System.out.print("Press \n1.First Name Validation\nn2.Last Name Validation\n3.Email Address validation: ");
             choose = sc.nextInt();
             switch (choose) {
                 case 1 -> Operations.validFirstName();
                 case 2 -> Operations.validLastName();
+                case 3 -> Operations.validEmailAddress();
                 default -> System.out.println("Invalid: Enter valid details.");
             }
             System.out.print("Press \n1.Continue \n2.Exit : ");
