@@ -8,12 +8,13 @@ public class UserRegistration {
         int choose;
         int select;
         do {
-            System.out.print("Press \n1.First Name Validation\nn2.Last Name Validation\n3.Email Address validation: ");
+            System.out.print("Press \n1.First Name Validation\n2.Last Name Validation\n3.Email Address validation\n4.Phone number Validation : ");
             choose = sc.nextInt();
             switch (choose) {
                 case 1 -> Operations.validFirstName();
                 case 2 -> Operations.validLastName();
                 case 3 -> Operations.validEmailAddress();
+                case 4 -> Operations.validMobileNumber("91 8796415236");
                 default -> System.out.println("Invalid: Enter valid details.");
             }
             System.out.print("Press \n1.Continue \n2.Exit : ");

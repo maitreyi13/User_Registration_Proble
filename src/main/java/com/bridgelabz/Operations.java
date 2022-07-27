@@ -47,4 +47,15 @@ public class Operations {
             System.out.println("Your Email Address is invalid");
         return result;
     }
+    public static boolean validMobileNumber(String mobNumber) {
+        String regex = "^\\d{2}\\s?\\d{10,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobNumber);
+        boolean result = matcher.matches();
+        if (result)
+            System.out.println("Your Mobile Number is valid");
+        else
+            System.out.println("Your Mobile Number is invalid");
+        return result;
+    }
 }
