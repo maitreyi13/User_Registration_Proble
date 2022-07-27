@@ -1,52 +1,53 @@
 package com.bridgelabz;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
-
+    Operations operations = new Operations();
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validFirstName("Neha"));
-            System.out.println("Valid First Name.");
+            Assertions.assertTrue(operations.fNameValidate.validateFirstName("Neha"));
+            System.out.println("First Name is valid");
         }catch (InvalidFirstNameException e){
-            System.out.println("Invalid First Name: " + e);
+            System.out.println("Invalid First Name " + e);
         }
     }
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validLastName("Joshi"));
-            System.out.println("Valid Last name");
+            Assertions.assertTrue(operations.lNameValidate.validateLastName("Joshi"));
+            System.out.println("Last Name is valid");
         }catch (InvalidLastNameException e){
-            System.out.println("Invalid Last Name: " + e);
+            System.out.println("Invalid last name " + e);
         }
     }
     @Test
     public void givenEmailId_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validEmailAddress("neha123@co.bl"));
-            System.out.println("Valid Email Address");
+            Assertions.assertTrue(operations.emailIDValidate.validateEmailID("neha123@co.bl"));
+            System.out.println("Email Id is valid ");
         }catch (InvalidEmailIdException e){
-            System.out.println("Invalid Email ID: " + e);
+            System.out.println("Invalid Email ID " + e);
         }
     }
     @Test
     public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validMobileNumber("91 8796415236"));
-            System.out.println("Valid mobile Number.");
+            Assertions.assertTrue(operations.mobNumberValidate.validateMobNumber("91 8796415236"));
+            System.out.println("Mobile number is valid ");
         }catch (InvalidMobileNumberException e){
-            System.out.println("Invalid Mobile Number: " + e);
+            System.out.println("Invalid Mobile Number" + e);
         }
     }
     @Test
     public void givenPassword_WhenProper_ShouldReturnTrue()  {
         try {
-            Assertions.assertTrue(Operations.validPassword("Neha@1234"));
-            System.out.println("Valid Password.");
+            Assertions.assertTrue(operations.passwordValidate.validatePassword("Neha@1234"));
+            System.out.println("Password is valid");
         }catch (InvalidPasswordException e){
-            System.out.println("Invalid Password: " + e);
+            System.out.println("Invalid Password " + e);
         }
     }
 }
