@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class UserRegistration {
     static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidFirstNameException, InvalidLastNameException, InvalidEmailIdException, InvalidMobileNumberException, InvalidPasswordException {
         System.out.println("*** Welcome to User Registration problem ***");
         int choose;
         int select;
@@ -14,7 +14,7 @@ public class UserRegistration {
             switch (choose) {
                 case 1 -> Operations.validFirstName("Neha");
                 case 2 -> Operations.validLastName("Joshi");
-                case 3 -> Operations.validEmailAddress("neha34@gmail.com");
+                case 3 -> Operations.validEmailAddress("neha.joshi@co.bl");
                 case 4 -> Operations.validMobileNumber("91 8796415236");
                 case 5 -> Operations.validPassword("Neha@1234");
                 default -> System.out.println("Invalid: Enter valid details.");

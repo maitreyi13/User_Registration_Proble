@@ -6,64 +6,47 @@ public class UserRegistrationTest {
 
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
-        boolean result = Operations.validFirstName("Neha");
-        System.out.println(result);
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenFirstName_WhenProper_ShouldReturnFalse() {
-        boolean result = Operations.validFirstName("neha");
-        System.out.println(result);
-        Assertions.assertFalse(result);
+        try {
+            Assertions.assertTrue(Operations.validFirstName("Neha"));
+            System.out.println("Valid First Name.");
+        }catch (InvalidFirstNameException e){
+            System.out.println("Invalid First Name: " + e);
+        }
     }
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        boolean result = Operations.validLastName("Joshi");
-        System.out.println(result);
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenLastName_WhenProper_ShouldReturnFalse() {
-        boolean result = Operations.validLastName("joshi");
-        System.out.println(result);
-        Assertions.assertFalse(result);
+        try {
+            Assertions.assertTrue(Operations.validLastName("Joshi"));
+            System.out.println("Valid Last name");
+        }catch (InvalidLastNameException e){
+            System.out.println("Invalid Last Name: " + e);
+        }
     }
     @Test
     public void givenEmailId_WhenProper_ShouldReturnTrue() {
-        boolean result = Operations.validEmailAddress("neha.joshi@bl.co");
-        System.out.println(result);
-        Assertions.assertTrue(result);
-    }
-
-    @Test
-    public void givenEmailId_WhenProper_ShouldReturnFalse() {
-        boolean result = Operations.validEmailAddress("%neha@.gmail.com");
-        System.out.println(result);
-        Assertions.assertFalse(result);
+        try {
+            Assertions.assertTrue(Operations.validEmailAddress("neha123@co.bl"));
+            System.out.println("Valid Email Address");
+        }catch (InvalidEmailIdException e){
+            System.out.println("Invalid Email ID: " + e);
+        }
     }
     @Test
     public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
-        boolean result = Operations.validMobileNumber("91 8796415236");
-        System.out.println(result);
-        Assertions.assertTrue(result);
+        try {
+            Assertions.assertTrue(Operations.validMobileNumber("91 8796415236"));
+            System.out.println("Valid mobile Number.");
+        }catch (InvalidMobileNumberException e){
+            System.out.println("Invalid Mobile Number: " + e);
+        }
     }
     @Test
-    public void givenMobileNumber_WhenProper_ShouldReturnFalse() {
-        boolean result = Operations.validMobileNumber("91 7416");
-        System.out.println(result);
-        Assertions.assertFalse(result);
-    }
-    @Test
-    public void givenPassword_WhenProper_ShouldReturnTrue() {
-        boolean result = Operations.validPassword("Neha%joshi1234");
-        System.out.println(result);
-        Assertions.assertTrue(result);
-    }
-    //Sad test case for Password
-    @Test
-    public void givenPassword_WhenProper_ShouldReturnFalse() {
-        boolean result = Operations.validPassword("neha1234");
-        System.out.println(result);
-        Assertions.assertFalse(result);
+    public void givenPassword_WhenProper_ShouldReturnTrue()  {
+        try {
+            Assertions.assertTrue(Operations.validPassword("Neha@1234"));
+            System.out.println("Valid Password.");
+        }catch (InvalidPasswordException e){
+            System.out.println("Invalid Password: " + e);
+        }
     }
 }
