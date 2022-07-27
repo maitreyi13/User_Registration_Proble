@@ -58,4 +58,17 @@ public class Operations {
             System.out.println("Your Mobile Number is invalid");
         return result;
     }
+    public static boolean validPassword(){
+        System.out.print("Enter the Password: ");
+        String password = sc.next();
+        String regex = "^[A-Za-z\\d@._-]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        boolean result = matcher.matches();
+        if (result)
+            System.out.println("Your password is valid");
+        else
+            System.out.println("Your Password is invalid. It should have minimum 8 characters");
+        return result;
+    }
 }
