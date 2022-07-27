@@ -20,4 +20,17 @@ public class Operations {
         }
         return result;
     }
+    public static boolean validLastName() {
+        System.out.print("Enter the Last name: ");
+        String nameLast = sc.next();
+        String regex = "^[A-Z][a-z]{2,}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(nameLast);
+        boolean result = m.matches();
+        if (result)
+            System.out.println("Your Last name is valid");
+        else
+            System.out.println("Your Last name is invalid");
+        return result;
+    }
 }
